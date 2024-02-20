@@ -41,14 +41,12 @@ jobs:
       run: |
         sudo curl -L "https://github.com/docker/compose/releases/download/v2.6.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
         sudo chmod +x /usr/local/bin/docker-compose
-
+    - run: chmod +x ./test.sh
 
     - name: Run Docker Compose Tests
       uses: koenhagen/measure-energy-action@v0.30
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          chmod +x ./test.sh
-          ./test.sh
+        run: ./test.sh
         count: 1
 
