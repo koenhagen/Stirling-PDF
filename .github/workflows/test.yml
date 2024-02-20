@@ -44,6 +44,11 @@ jobs:
 
 
     - name: Run Docker Compose Tests
-      run: |
-        chmod +x ./test.sh
-        ./test.sh
+      uses: koenhagen/measure-energy-action@v0.30
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x ./test.sh
+          ./test.sh
+        count: 1
+
