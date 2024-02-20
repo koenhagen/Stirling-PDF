@@ -1,14 +1,7 @@
 name: Docker Compose Tests
 
 on:
-  pull_request:
-    paths:
-      - 'src/**'
-      - '**.gradle'
-      - '!src/main/java/resources/messages*'
-      - 'exampleYmlFiles/**'
-      - 'Dockerfile'
-      - 'Dockerfile**'
+  push:
 
 jobs:
   test:
